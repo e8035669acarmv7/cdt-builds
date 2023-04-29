@@ -1,0 +1,62 @@
+package:
+  name: at-spi-cos7-armv7l
+  version: 1.32.0
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/at-spi-1.32.0-12.el7.armv7hl.rpm
+    sha256: fdc8735d2d2fad20866dca43f27bd8eef46c1ed37b0b767914bd88993d7479ad
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/at-spi-1.32.0-12.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - orbit2-cos7-armv7l >=2.6.0 *_{{ cdt_build_number|int + 1000 }}
+    - atk-cos7-armv7l >=1.29.2 *_{{ cdt_build_number|int + 1000 }}
+    - gail-cos7-armv7l >=2.24.31 *_{{ cdt_build_number|int + 1000 }}
+    - gtk2-cos7-armv7l >=2.10.0 *_{{ cdt_build_number|int + 1000 }}
+    - libbonobo-cos7-armv7l >=2.4.0 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - orbit2-cos7-armv7l >=2.6.0 *_{{ cdt_build_number|int + 1000 }}
+    - atk-cos7-armv7l >=1.29.2 *_{{ cdt_build_number|int + 1000 }}
+    - gail-cos7-armv7l >=2.24.31 *_{{ cdt_build_number|int + 1000 }}
+    - gtk2-cos7-armv7l >=2.10.0 *_{{ cdt_build_number|int + 1000 }}
+    - libbonobo-cos7-armv7l >=2.4.0 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - orbit2-cos7-armv7l >=2.6.0 *_{{ cdt_build_number|int + 1000 }}
+    - atk-cos7-armv7l >=1.29.2 *_{{ cdt_build_number|int + 1000 }}
+    - gail-cos7-armv7l >=2.24.31 *_{{ cdt_build_number|int + 1000 }}
+    - gtk2-cos7-armv7l >=2.10.0 *_{{ cdt_build_number|int + 1000 }}
+    - libbonobo-cos7-armv7l >=2.4.0 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://developer.gnome.org/projects/gap/
+  license: LGPL-2.0-or-later
+  license_family: LGPL
+  license_file: {{ SRC_DIR }}/binary/usr/share/doc/at-spi-1.32.0/COPYING
+  summary: "(CDT) Assistive Technology Service Provider Interface"
+  description: |
+        at-spi allows assistive technologies to access GTK-based applications.
+        Essentially it exposes the internals of applications for automation, so tools
+        such as screen readers, magnifiers, or even scripting interfaces can query and
+        interact with GUI controls.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

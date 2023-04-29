@@ -1,0 +1,43 @@
+package:
+  name: libxdamage-cos7-armv7l
+  version: 1.1.4
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXdamage-1.1.4-4.1.el7.armv7hl.rpm
+    sha256: 62081787c5367de31d457fc2e4e5579dd02946f712ef3434099955ab95214eda
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libXdamage-1.1.4-4.1.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.x.org
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/usr/share/doc/libXdamage-1.1.4/COPYING
+  summary: "(CDT) X Damage extension library"
+  description: |
+        X.Org X11 libXdamage runtime library.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

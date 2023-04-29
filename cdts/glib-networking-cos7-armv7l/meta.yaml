@@ -1,0 +1,45 @@
+package:
+  name: glib-networking-cos7-armv7l
+  version: 2.56.1
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/glib-networking-2.56.1-1.el7.armv7hl.rpm
+    sha256: 8b83fd1e8421c152cc11a43a89abc594c271f774e98b29039997065be18f6e5d
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/glib-networking-2.56.1-1.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.gnome.org
+  license: LGPL-2.0-or-later
+  license_family: LGPL
+  license_file: {{ SRC_DIR }}/binary/usr/share/licenses/glib-networking-2.56.1/COPYING
+  summary: "(CDT) Networking support for GLib"
+  description: |
+        This package contains modules that extend the networking support in GIO. In
+        particular, it contains libproxy- and GSettings-based GProxyResolver
+        implementations and a gnutls-based GTlsConnection implementation.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

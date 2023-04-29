@@ -1,0 +1,48 @@
+package:
+  name: pcre-cos7-armv7l
+  version: 8.32
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/pcre-8.32-17.el7.armv7hl.rpm
+    sha256: b3eed0d1b658bed0f03261a86bb9355d82bf1cd0ed2d2197b28a2a122edbaf04
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/pcre-8.32-17.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.pcre.org/
+  license: BSD
+  license_family: BSD
+  license_file: {{ SRC_DIR }}/binary/usr/share/doc/pcre-8.32/LICENCE
+  summary: "(CDT) Perl-compatible regular expression library"
+  description: |
+        Perl-compatible regular expression library. PCRE has its own native API, but a
+        set of "wrapper" functions that are based on the POSIX API are also supplied
+        in the library libpcreposix. Note that this just provides a POSIX calling
+        interface to PCRE: the regular expressions themselves still follow Perl syntax
+        and semantics. The header file for the POSIX-style functions is called
+        pcreposix.h.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

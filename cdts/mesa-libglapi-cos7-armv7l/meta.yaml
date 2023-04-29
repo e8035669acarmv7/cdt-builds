@@ -1,0 +1,43 @@
+package:
+  name: mesa-libglapi-cos7-armv7l
+  version: 18.3.4
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/mesa-libglapi-18.3.4-10.el7.armv7hl.rpm
+    sha256: 9b8c356894a0719246904375ee04473211e2e557e22d9da98450229bc3285f8e
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/mesa-18.3.4-10.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.mesa3d.org
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) Mesa shared glapi"
+  description: |
+        Mesa shared glapi
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

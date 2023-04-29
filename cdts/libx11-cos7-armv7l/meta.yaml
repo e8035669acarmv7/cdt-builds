@@ -1,0 +1,47 @@
+package:
+  name: libx11-cos7-armv7l
+  version: 1.6.7
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libX11-1.6.7-2.el7.armv7hl.rpm
+    sha256: dd5a5bad3f572d9413c03f195f0199c8c891163aa9cca246bb03900cb03d4ba6
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libX11-1.6.7-2.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - libx11-common-cos7-armv7l >=1.6.7 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - libx11-common-cos7-armv7l >=1.6.7 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - libx11-common-cos7-armv7l >=1.6.7 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.x.org
+  license: MIT
+  license_family: MIT
+  license_file: x11-license
+  summary: "(CDT) Core X11 protocol client library"
+  description: |
+        Core X11 protocol client library.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

@@ -260,6 +260,29 @@ def _gen_cdts(single_sysroot):
                 "allow_missing_sources": True,
                 "glibc_ver": "2.17",
             },
+            "centos7-altarm": {
+                "dirname": "centos7",
+                "short_name": "cos7",
+                "base_url": "http://mirror.centos.org/altarch/7/os/{base_architecture}/CentOS/",  # noqa
+                "sbase_url": "http://vault.centos.org/7.7.1908/os/Source/SPackages/",
+                "repomd_url": "http://mirror.centos.org/altarch/7/os/{base_architecture}/repodata/repomd.xml",  # noqa
+                "host_machine": (
+                    "{gnu_architecture}-conda-linux-gnueabihf"
+                    if single_sysroot else
+                    "{gnu_architecture}-conda_cos7-linux-gnueabihf"
+                ),
+                "host_subdir": "linux-armv7l",
+                "fname_architecture": "armv7hl",
+                "rpm_filename_platform": "el7.armv7hl",
+                "checksummer": hashlib.sha256,
+                "checksummer_name": "sha256",
+                # Some macros are defined in /etc/rpm/macros.* but I cannot find where
+                # these ones are defined. Also, rpm --eval "%{gdk_pixbuf_base_version}"
+                # gives nothing nor does rpm --showrc | grep gdk
+                "macros": {"pyver": "2.6.6", "gdk_pixbuf_base_version": "2.24.1"},
+                "allow_missing_sources": True,
+                "glibc_ver": "2.17",
+            },
         }
     )
 
@@ -286,6 +309,7 @@ def cache_file(src_cache, url, fn=None, checksummer=hashlib.sha256):
         source = dict({"url": url, "fn": fn})
     else:
         source = dict({"url": url})
+    print("src_cache", src_cache, "url", url)
     cached_path, _ = download_to_cache(src_cache, "", source)
     csum = checksummer()
     csum.update(open(cached_path, "rb").read())
@@ -357,7 +381,6 @@ def find_repo_entry_and_arch(repo_primary, architectures, depend):
             )
         )  # noqa
         return None, None, None
-
     chosen_arch = None
     for arch in architectures:
         if arch in found_package:
@@ -647,6 +670,7 @@ def write_conda_recipes(
     build_number_bump,
 ):
 
+    print('write_conda_recipes', 'here3')
     if build_number_bump is None:
         _extra_build_num_str = ""
     else:
@@ -659,8 +683,15 @@ def write_conda_recipes(
     else:
         build_number_jinja2 = "{{ cdt_build_number|int%s }}" % _extra_build_num_str
 
+    arch_replace = {'armv7l': 'armv7hl'}
+    new_archs = []
+    for a in architectures:
+        if a in arch_replace:
+            new_archs.append(arch_replace[a])
+        else:
+            new_archs.append(a)
     entry, entry_name, arch = find_repo_entry_and_arch(
-        repo_primary, architectures, dict({"name": package})
+        repo_primary, new_archs, dict({"name": package})
     )
     if not entry:
         return
@@ -701,7 +732,7 @@ def write_conda_recipes(
     if package in cdt["dependency_add"]:
         for missing_dep in cdt["dependency_add"][package]:
             e_missing, e_name_missing, _ = find_repo_entry_and_arch(
-                repo_primary, architectures, dict({"name": missing_dep})
+                repo_primary, new_archs, dict({"name": missing_dep})
             )
             if e_missing:
                 for provides in e_missing["provides"]:
@@ -717,6 +748,7 @@ def write_conda_recipes(
                     )
                 )
 
+    print('depends', depends)
     for depend in depends:
         # replace of "(x86-64)", "(aarch-64)"
         # hack around bad repo data upstream for libXtst-devel
@@ -725,7 +757,7 @@ def write_conda_recipes(
                 depend["name"] = depend["name"][:-len(tail)]
 
         dep_entry, dep_name, dep_arch = find_repo_entry_and_arch(
-            repo_primary, architectures, depend
+            repo_primary, new_archs, depend
         )
         if override_arch:
             dep_arch = architectures[0]
@@ -733,6 +765,7 @@ def write_conda_recipes(
         # Because something else may provide a substitute for the wanted package
         # we need to also overwrite the versions with those of the provider, e.g.
         # libjpeg 6b is provided by libjpeg-turbo 1.2.1
+        print("depend", depend, "dep_entry", dep_entry)
         if depend["name"] != dep_name and "version" in dep_entry:
             if "ver" in dep_entry["version"]:
                 depend["ver"] = dep_entry["version"]["ver"]
@@ -847,6 +880,7 @@ def write_conda_recipes(
         }
     )
     odir = join(output_dir, package_cdt_name)
+    print('here4', odir)
     try:
         makedirs(odir)
     except Exception:
@@ -879,9 +913,23 @@ def write_conda_recipe(
     cdt_info,
     build_number_bump,
 ):
+    print('write conda recipe')
+    print('packages', packages)
+    print('distro', distro)
+    print('output_dir', output_dir)
+    print('architecture', architecture)
+    print('recursive', recursive)
+    print('override_arch', override_arch)
+    print('dependency_add', dependency_add)
+    print('config', config)
+    print('build_number', build_number)
+    print('conda_forge_style', conda_forge_style)
+    print('single_sysroot', single_sysroot)
+    print('build_number_bump', build_number_bump)
+
     cdt_name = distro
-    bits = "32" if architecture in ("armv6", "armv7a", "i686", "i386") else "64"
-    base_architectures = dict({"i686": "i386"})
+    bits = "32" if architecture in ("armv6", "armv7a", "i686", "i386", "armv7l") else "64"
+    base_architectures = dict({"i686": "i386", "armv7l": "armhfp"})
     # gnu_architectures are those recognized by the canonical config.sub / config.guess
     # and crosstool-ng. They are returned from ${CC} -dumpmachine and are a part of the
     # sysroot.
@@ -902,6 +950,7 @@ def write_conda_recipe(
             "bits": bits,
         }
     )
+
     cdt = dict()
     for k, v in cdt_info[cdt_name].items():
         if isinstance(v, string_types):
@@ -925,6 +974,7 @@ def write_conda_recipe(
     repo_primary = get_repo_dict(
         repomd_url, "primary", massage_primary, cdt, config.src_cache
     )
+    print('packages', packages)
     for package in packages:
         write_conda_recipes(
             recursive,
@@ -970,8 +1020,10 @@ def skeletonize(
     use_global_cache,
 ):
     cdt_info = _gen_cdts(single_sysroot)
-    if architecture in ["aarch64", "ppc64le"]:
+    if architecture in ["aarch64", "ppc64le", "armv7l"]:
         cdt_info["centos7"] = cdt_info["centos7-alt"]
+    if architecture in ["armv7l"]:
+        cdt_info["centos7"] = cdt_info["centos7-altarm"]
 
     def _call(cfg):
         write_conda_recipe(

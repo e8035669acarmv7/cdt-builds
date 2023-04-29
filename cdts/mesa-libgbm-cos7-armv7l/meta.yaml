@@ -1,0 +1,50 @@
+package:
+  name: mesa-libgbm-cos7-armv7l
+  version: 18.3.4
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/mesa-libgbm-18.3.4-10.el7.armv7hl.rpm
+    sha256: 1e2dea29d1f8798d9884d4d168059e2479cf96ae49ed5e107c32a40789b1a6ce
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/mesa-18.3.4-10.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - libdrm-cos7-armv7l >=2.4.83 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libglapi-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - libdrm-cos7-armv7l >=2.4.83 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libglapi-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - libdrm-cos7-armv7l >=2.4.83 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libglapi-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.mesa3d.org
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) Mesa gbm library"
+  description: |
+        Mesa gbm runtime library.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

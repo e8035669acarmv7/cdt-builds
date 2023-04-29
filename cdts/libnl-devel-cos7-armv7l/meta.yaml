@@ -1,0 +1,47 @@
+package:
+  name: libnl-devel-cos7-armv7l
+  version: 1.1.4
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libnl-devel-1.1.4-3.el7.armv7hl.rpm
+    sha256: 4f1fc276c0599d190733dbc5be63c40c2ad74b78e7af60f5b97f752b2568e440
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libnl-1.1.4-3.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - libnl-cos7-armv7l ==1.1.4 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - libnl-cos7-armv7l ==1.1.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - libnl-cos7-armv7l ==1.1.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.infradead.org/~tgr/libnl/
+  license: LGPLv2
+  license_family: LGPL
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) Libraries and headers for using libnl"
+  description: |
+        This package contains various headers for using libnl
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

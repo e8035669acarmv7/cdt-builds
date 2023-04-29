@@ -1,0 +1,44 @@
+package:
+  name: libxcb-devel-cos7-armv7l
+  version: 1.13
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libxcb-devel-1.13-1.el7.armv7hl.rpm
+    sha256: 27bc8d2469f481a70d5cfc7d16cfa62237dc38f2098ec0e4680d1129bd57acc3
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libxcb-1.13-1.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: https://xcb.freedesktop.org/
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) Development files for libxcb"
+  description: |
+        The libxcb-devel package contains libraries and header files for developing
+        applications that use libxcb.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

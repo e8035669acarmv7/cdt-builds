@@ -130,14 +130,15 @@ def _make_cdt_recipes(*, extra, cdt_path, arch_dist_tuples, cdts, exec, force):
             futures[exec.submit(
                 subprocess.run,
                 (
-                    f"python rpm.py {cdt} --output-dir={cdt_path} "
+                    f"python3 rpm.py {cdt} --output-dir={cdt_path} "
                     + f"--architecture={arch} --distro={dist} "
                     + _extra
                 ),
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
-                shell=True
+                shell=True,
+                check=True
             )] = {"cdt": cdt, "arch": arch, "dist": dist}
     return futures
 
@@ -416,7 +417,8 @@ def _main(force, no_legacy, fast, keep_url_changes):
             extra += " --use-global-cache"
         arch_dist_tuples = [
             ("x86_64", "centos6"), ("x86_64", "centos7"),
-            ("aarch64", "centos7"), ("ppc64le", "centos7")
+            ("aarch64", "centos7"), ("ppc64le", "centos7"),
+            ("armv7l", "centos7"),
         ]
         futures.update(
             _make_cdt_recipes(
@@ -498,7 +500,8 @@ def _main(force, no_legacy, fast, keep_url_changes):
     # new CDTs for the new compilers with a single sysroot
     arch_dist_tuples = [
         ("x86_64", "centos6"), ("x86_64", "centos7"),
-        ("aarch64", "centos7"), ("ppc64le", "centos7")
+        ("aarch64", "centos7"), ("ppc64le", "centos7"),
+        ("armv7l", "centos7")
     ]
     _cleanup_custom_cdt_overlaps(
         cdt_path=CDT_PATH,

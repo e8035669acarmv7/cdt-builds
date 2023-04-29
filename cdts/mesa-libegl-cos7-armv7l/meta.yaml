@@ -1,0 +1,47 @@
+package:
+  name: mesa-libegl-cos7-armv7l
+  version: 18.3.4
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/mesa-libEGL-18.3.4-10.el7.armv7hl.rpm
+    sha256: e3f5b44cb57928ab6c56c47c1b7b46dcf70115a4051cbc23a698090430dc44e3
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/mesa-18.3.4-10.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - mesa-libgbm-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - mesa-libgbm-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - mesa-libgbm-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.mesa3d.org
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) Mesa libEGL runtime libraries"
+  description: |
+        Mesa libEGL runtime libraries
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

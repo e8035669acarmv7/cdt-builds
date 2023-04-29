@@ -1,0 +1,47 @@
+package:
+  name: libxdamage-devel-cos7-armv7l
+  version: 1.1.4
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXdamage-devel-1.1.4-4.1.el7.armv7hl.rpm
+    sha256: 518204fc1a666f99b142c95dd646af082d2f0c5f1f94131b73972f5151903575
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libXdamage-1.1.4-4.1.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - libxdamage-cos7-armv7l ==1.1.4 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - libxdamage-cos7-armv7l ==1.1.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - libxdamage-cos7-armv7l ==1.1.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.x.org
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) Development files for libXdamage"
+  description: |
+        X.Org X11 libXdamage development package.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

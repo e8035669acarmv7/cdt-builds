@@ -1,0 +1,43 @@
+package:
+  name: libglvnd-gles-cos7-armv7l
+  version: 1.0.1
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libglvnd-gles-1.0.1-0.8.git5baa1e5.el7.armv7hl.rpm
+    sha256: 8c9d95ca7c3ee5bf1ed77c411550b9fdaf411761ca8aece2855402ef1bee94a7
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libglvnd-1.0.1-0.8.git5baa1e5.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: https://github.com/NVIDIA/libglvnd
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) GLES support for libglvnd"
+  description: |
+        libGLESv[12] are the common dispatch interface for the GLES API.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

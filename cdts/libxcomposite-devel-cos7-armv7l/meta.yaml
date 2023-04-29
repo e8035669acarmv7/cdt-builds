@@ -1,0 +1,47 @@
+package:
+  name: libxcomposite-devel-cos7-armv7l
+  version: 0.4.4
+
+source:
+  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXcomposite-devel-0.4.4-4.1.el7.armv7hl.rpm
+    sha256: 1e5be3d67ea4adf111b46c39569643afedd66a57c8e167b9a3ec062ed8b94659
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libXcomposite-0.4.4-4.1.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - libxcomposite-cos7-armv7l ==0.4.4 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - libxcomposite-cos7-armv7l ==0.4.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - libxcomposite-cos7-armv7l ==0.4.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.x.org
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) Development files for libXcomposite"
+  description: |
+        X.Org X11 libXcomposite development package
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts
