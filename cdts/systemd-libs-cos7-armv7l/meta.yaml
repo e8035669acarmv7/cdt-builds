@@ -33,7 +33,7 @@ about:
   home: http://www.freedesktop.org/wiki/Software/systemd
   license: LGPLv2+ and MIT
   license_family: LGPL
-  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  license_file: LICENSE.MIT
   summary: "(CDT) systemd libraries"
   description: |
         Libraries for systemd and udev, as well as the systemd PAM module.

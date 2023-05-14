@@ -33,7 +33,7 @@ about:
   home: http://www.x.org/
   license: MIT
   license_family: MIT
-  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  license_file: libxshmfence-license
   summary: "(CDT) X11 shared memory fences"
   description: |
         Shared memory fences for X11, as used in DRI3.

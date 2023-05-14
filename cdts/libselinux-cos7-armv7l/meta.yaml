@@ -33,7 +33,7 @@ about:
   home: https://github.com/SELinuxProject/selinux/wiki
   license: Public-Domain
   license_family: Public-Domain
-  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  # license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) SELinux library and simple utilities"
   description: |
         Security-enhanced Linux is a feature of the Linux® kernel and a number of

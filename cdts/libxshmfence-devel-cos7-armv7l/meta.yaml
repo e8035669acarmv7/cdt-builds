@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - libxshmfence-cos7-armv7l ==1.2 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - libxshmfence-cos7-armv7l ==1.2 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - libxshmfence-cos7-armv7l ==1.2 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:
@@ -33,7 +37,7 @@ about:
   home: http://www.x.org/
   license: MIT
   license_family: MIT
-  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  license_file: libxshmfence-license
   summary: "(CDT) Development files for libxshmfence"
   description: |
         The libxshmfence-devel package contains libraries and header files for

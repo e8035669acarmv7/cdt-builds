@@ -33,7 +33,7 @@ about:
   home: http://dri.sourceforge.net
   license: MIT
   license_family: MIT
-  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  # license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Direct Rendering Manager runtime library"
   description: |
         Direct Rendering Manager runtime library

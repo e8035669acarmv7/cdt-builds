@@ -43,7 +43,7 @@ about:
   home: http://www.freedesktop.org/wiki/Software/systemd
   license: LGPLv2+ and MIT and GPLv2+
   license_family: GPL2
-  license_file: {{ SRC_DIR }}/binary/usr/share/licenses/systemd-219/LICENSE.MIT
+  license_file: LICENSE.MIT
   summary: "(CDT) A System and Service Manager"
   description: |
         systemd is a system and service manager for Linux, compatible with SysV and

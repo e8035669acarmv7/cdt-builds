@@ -33,7 +33,7 @@ about:
   home: https://www.kernel.org/
   license: GPLv2 and Redistributable, no modification permitted
   license_family: GPL2
-  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  # license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Header files for the Linux kernel for use by glibc"
   description: |
         Kernel-headers includes the C header files that specify the interface between
