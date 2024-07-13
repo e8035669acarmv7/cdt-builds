@@ -1,0 +1,47 @@
+package:
+  name: pixman-devel-cos7-armv7l
+  version: 0.34.0
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/pixman-devel-0.34.0-1.el7.armv7hl.rpm
+    sha256: 6d2f0003a546683364857e6df1a33a54f60fddd7172afbae9ce811704cb3f29e
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/pixman-0.34.0-1.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - pixman-cos7-armv7l ==0.34.0 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - pixman-cos7-armv7l ==0.34.0 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - pixman-cos7-armv7l ==0.34.0 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://cgit.freedesktop.org/pixman/
+  license: MIT
+  license_family: MIT
+  license_file: pixman-license
+  summary: (CDT) Pixel manipulation library development package
+  description: |
+    Development library for pixman.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

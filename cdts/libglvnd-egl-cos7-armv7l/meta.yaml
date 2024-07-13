@@ -1,0 +1,50 @@
+package:
+  name: libglvnd-egl-cos7-armv7l
+  version: 1.0.1
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libglvnd-egl-1.0.1-0.8.git5baa1e5.el7.armv7hl.rpm
+    sha256: 1614c795feb617b090f7589142cdb2a227bd7b64ff8b495a8ba72f907984c6ed
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libglvnd-1.0.1-0.8.git5baa1e5.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - libglvnd-cos7-armv7l ==1.0.1 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libegl-cos7-armv7l >=13.0.4 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - libglvnd-cos7-armv7l ==1.0.1 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libegl-cos7-armv7l >=13.0.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - libglvnd-cos7-armv7l ==1.0.1 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libegl-cos7-armv7l >=13.0.4 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: https://github.com/NVIDIA/libglvnd
+  license: MIT
+  license_family: MIT
+  license_file: libglvnd-license
+  summary: (CDT) EGL support for libglvnd
+  description: |
+    libEGL are the common dispatch interface for the EGL API.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

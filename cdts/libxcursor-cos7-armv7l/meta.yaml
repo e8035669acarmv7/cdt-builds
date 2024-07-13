@@ -1,0 +1,50 @@
+package:
+  name: libxcursor-cos7-armv7l
+  version: 1.1.15
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXcursor-1.1.15-1.el7.armv7hl.rpm
+    sha256: 4d9f80f9cc7904a846023e9e6aa15ece32f3429a1293cf7d078881ab7bffefea
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libXcursor-1.1.15-1.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: False
+  detect_binary_files_with_prefix: False
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - libx11-cos7-armv7l >=1.5.99.902 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - libx11-cos7-armv7l >=1.5.99.902 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - libx11-cos7-armv7l >=1.5.99.902 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: https://www.x.org
+  license: MIT
+  license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/usr/share/doc/libXcursor-1.1.15/COPYING
+  summary: "(CDT) Cursor management library"
+  description: |
+        This is  a simple library designed to help locate and load cursors. Cursors
+        can be loaded from files or memory. A library of common cursors exists which
+        map to the standard X cursor names.Cursors can exist in several sizes and the
+        library automatically picks the best size.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

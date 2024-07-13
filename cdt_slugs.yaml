@@ -65,6 +65,14 @@ centos-release:
   skipped_cdts:
     - cos6-x86_64
   license_file: licenses/centos-release-license
+centos-userland-release:
+  custom: false
+  skipped_cdts:
+    - cos6-x86_64
+    - cos7-x86_64
+    - cos7-aarch64
+    - cos7-ppc64le
+  license_file: licenses/centos-release-license
 chkconfig:
   custom: false
 copy-jdk-configs:
@@ -641,6 +649,8 @@ nss-util:
   license_file: licenses/nss-license
 numactl:
   custom: false
+  skipped_cdts:
+    - cos7-armv7l
   license_file:
     - licenses/numactl-copyright.txt
     - licenses/numactl-gpl2.txt
@@ -649,12 +659,15 @@ numactl-libs:
   custom: false
   skipped_cdts:
     - cos6-x86_64
+    - cos7-armv7l
   license_file:
     - licenses/numactl-copyright.txt
     - licenses/numactl-gpl2.txt
     - licenses/numactl-lgpl2.txt
 numactl-devel:
   custom: false
+  skipped_cdts:
+    - cos7-armv7l
   license_file:
     - licenses/numactl-copyright.txt
     - licenses/numactl-gpl2.txt
@@ -778,6 +791,7 @@ systemd:
     - licenses/systemd-licenses/LICENSE.LGPL2.1
     - licenses/systemd-licenses/LICENSE.MIT
   dep_replace:
+    redhat-release-cos7-armv7l: centos-userland-release-cos7-armv7l
     redhat-release-cos7: centos-release-cos7
 systemd-devel:
   custom: false

@@ -1,0 +1,43 @@
+package:
+  name: centos-userland-release-cos7-armv7l
+  version: 7
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/centos-userland-release-7-9.2009.0.el7.centos.armv7hl.rpm
+    sha256: ddb2f55cfc4e8a9458b50020b2b13d68eb707d5bc49aadf99d39382935f5c4ae
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/centos-userland-release-7-9.2009.0.el7.centos.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: centos-userland-release-cos7-armv7l
+  license: GPL-2.0-only
+  license_family: GPL2
+  license_file: centos-release-license
+  summary: (CDT) CentOS Linux release file
+  description: |
+    CentOS Linux release files
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

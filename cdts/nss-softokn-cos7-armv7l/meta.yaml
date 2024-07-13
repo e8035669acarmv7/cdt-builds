@@ -1,0 +1,53 @@
+package:
+  name: nss-softokn-cos7-armv7l
+  version: 3.44.0
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/nss-softokn-3.44.0-8.el7_7.armv7hl.rpm
+    sha256: db86d94d1a5a164d65a590310ddc180a6231b762856e706eedcceaa94468c774
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/nss-softokn-3.44.0-8.el7_7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - nspr-cos7-armv7l >=4.21.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-freebl-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-util-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - nspr-cos7-armv7l >=4.21.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-freebl-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-util-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - nspr-cos7-armv7l >=4.21.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-freebl-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-util-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.mozilla.org/projects/security/pki/nss/
+  license: MPL-2.0
+  license_family: Other
+  license_file: nss-license
+  summary: (CDT) Network Security Services Softoken Module
+  description: |
+    Network Security Services Softoken Cryptographic Module
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

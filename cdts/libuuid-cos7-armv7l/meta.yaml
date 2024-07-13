@@ -1,0 +1,49 @@
+package:
+  name: libuuid-cos7-armv7l
+  version: 2.23.2
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libuuid-2.23.2-65.el7.armv7hl.rpm
+    sha256: 57fc797e5d8454c649cd50f9347cc0f7a23b7b1c3ab4fe0aa113459018e828c1
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/util-linux-2.23.2-65.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://en.wikipedia.org/wiki/Util-linux
+  license: BSD
+  license_family: BSD
+  license_file: libuuid-license
+  summary: (CDT) Universally unique ID library
+  description: |
+    This is the universally unique ID library, part of util-linux.  The libuuid
+    library generates and parses 128-bit universally unique id's (UUID's).  A UUID
+    is an identifier that is unique across both space and time, with respect to
+    the space of all UUIDs.  A UUID can be used for multiple purposes, from
+    tagging objects with an extremely short lifetime, to reliably identifying very
+    persistent objects across a network.  See also the "uuid" package, which is a
+    separate implementation.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

@@ -1,0 +1,47 @@
+package:
+  name: libxau-devel-cos7-armv7l
+  version: 1.0.8
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXau-devel-1.0.8-2.1.el7.armv7hl.rpm
+    sha256: 34bc25f17470015ccd5c1cc1ffba6ca49c5d5f5ce18ea3082e16dfa63d88dc77
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libXau-1.0.8-2.1.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - libxau-cos7-armv7l ==1.0.8 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - libxau-cos7-armv7l ==1.0.8 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - libxau-cos7-armv7l ==1.0.8 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.x.org
+  license: MIT
+  license_family: MIT
+  license_file: libxau-license
+  summary: (CDT) Development files for libXau
+  description: |
+    X.Org X11 libXau development package
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

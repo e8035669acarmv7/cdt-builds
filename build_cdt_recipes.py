@@ -177,7 +177,7 @@ def _build_cdt(cdt_meta_node, no_temp=False):
         for _ in range(5):
             c_up = subprocess.run(
                 "anaconda --token ${ANACONDA_TOKEN} upload "
-                "--skip-existing %s" % cdt_file[0],
+                "%s" % cdt_file[0],
                 shell=True,
                 text=True,
                 stdout=subprocess.PIPE,

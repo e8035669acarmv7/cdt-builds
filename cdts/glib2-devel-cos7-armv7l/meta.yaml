@@ -1,0 +1,47 @@
+package:
+  name: glib2-devel-cos7-armv7l
+  version: 2.56.1
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/glib2-devel-2.56.1-7.el7.armv7hl.rpm
+    sha256: dbca7f5e4fcaa9add4306dc8e12ac10f528b0273686258d8ea2943856cf911bf
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/glib2-2.56.1-7.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - glib2-cos7-armv7l ==2.56.1 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - glib2-cos7-armv7l ==2.56.1 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - glib2-cos7-armv7l ==2.56.1 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.gtk.org
+  license: LGPL-2.0-or-later
+  license_family: LGPL
+  license_file: glib2-copying
+  summary: (CDT) A library of handy utility functions
+  description: |
+    The glib2-devel package includes the header files for the GLib library.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

@@ -1,0 +1,45 @@
+package:
+  name: kernel-headers-cos7-armv7l
+  version: 5.4.28
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/kernel-headers-5.4.28-200.el7.armv7hl.rpm
+    sha256: d0ce04e3313a7297e2ce09ccd729fd9849625bcfd27624f47de38818622cc61a
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/kernel-5.4.28-200.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  host:
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: https://www.kernel.org/
+  license: GPLv2 and Redistributable, no modification permitted
+  license_family: GPL2
+  summary: (CDT) Header files for the Linux kernel for use by glibc
+  description: |
+    Kernel-headers includes the C header files that specify the interface between
+    the Linux kernel and userspace libraries and programs.  The header files
+    define structures and constants that are needed for building most standard
+    programs and are also needed for rebuilding the glibc package.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

@@ -1,0 +1,48 @@
+package:
+  name: opensm-devel-cos7-armv7l
+  version: 3.3.21
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/opensm-devel-3.3.21-3.el7_8.armv7hl.rpm
+    sha256: 9f62790c66ecbdf8e1cc33d0cf089574a5f27f7816abfc4f0a84c9475dc69ec6
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/opensm-3.3.21-3.el7_8.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - opensm-libs-cos7-armv7l ==3.3.21 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - opensm-libs-cos7-armv7l ==3.3.21 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - opensm-libs-cos7-armv7l ==3.3.21 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: https://github.com/linux-rdma/opensm
+  license: GPLv2 or BSD
+  license_family: GPL2
+  license_file:
+    - opensm-license
+  summary: (CDT) Development files for the opensm-libs libraries
+  description: |
+    Development environment for the opensm libraries
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

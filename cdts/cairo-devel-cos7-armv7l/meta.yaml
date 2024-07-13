@@ -1,0 +1,53 @@
+package:
+  name: cairo-devel-cos7-armv7l
+  version: 1.15.12
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/cairo-devel-1.15.12-4.el7.armv7hl.rpm
+    sha256: 9cd49d5231ae7d249b412b728707da9d42dd2da3e814015b90c6d88f95945048
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/cairo-1.15.12-4.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - cairo-cos7-armv7l ==1.15.12 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - cairo-cos7-armv7l ==1.15.12 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - cairo-cos7-armv7l ==1.15.12 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://cairographics.org
+  license: LGPLv2 or MPLv1.1
+  license_family: LGPL
+  license_file:
+    - cairo-copying
+    - cairo-copying-lgpl-2.1
+    - cairo-copying-mpl-1.1
+  summary: (CDT) Development files for cairo
+  description: |
+    Cairo is a 2D graphics library designed to provide high-quality display and
+    print output.  This package contains libraries, header files and developer
+    documentation needed for developing software which uses the cairo graphics
+    library.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts

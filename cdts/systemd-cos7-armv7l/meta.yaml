@@ -1,0 +1,61 @@
+package:
+  name: systemd-cos7-armv7l
+  version: 219
+
+source:
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/systemd-219-78.el7.armv7hl.rpm
+    sha256: 2ffaa563b04f2de872763a6e7317a64125e337d238ffd9d5f5fd303d4070ff7e
+    no_hoist: true
+    folder: binary
+  # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/systemd-219-78.el7.src.rpm
+  #   no_hoist: true
+  #   folder: source
+
+build:
+  number: {{ cdt_build_number|int + 1000 }}
+  noarch: generic
+  binary_relocation: false
+  detect_binary_files_with_prefix: false
+  missing_dso_whitelist:
+    - '*'
+
+requirements:
+  build:
+    - kmod-cos7-armv7l >=18 *_{{ cdt_build_number|int + 1000 }}
+    - centos-userland-release-cos7-armv7l >=7 *_{{ cdt_build_number|int + 1000 }}
+    - systemd-libs-cos7-armv7l ==219 *_{{ cdt_build_number|int + 1000 }}
+  host:
+    - kmod-cos7-armv7l >=18 *_{{ cdt_build_number|int + 1000 }}
+    - centos-userland-release-cos7-armv7l >=7 *_{{ cdt_build_number|int + 1000 }}
+    - systemd-libs-cos7-armv7l ==219 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+  run:
+    - kmod-cos7-armv7l >=18 *_{{ cdt_build_number|int + 1000 }}
+    - centos-userland-release-cos7-armv7l >=7 *_{{ cdt_build_number|int + 1000 }}
+    - systemd-libs-cos7-armv7l ==219 *_{{ cdt_build_number|int + 1000 }}
+    - sysroot_linux-armv7l 2.17.*
+test:
+  commands:
+    - echo "it installs!"
+
+about:
+  home: http://www.freedesktop.org/wiki/Software/systemd
+  license: LGPLv2+ and MIT and GPLv2+
+  license_family: GPL2
+  license_file:
+    - LICENSE.GPL2
+    - LICENSE.LGPL2.1
+    - LICENSE.MIT
+  summary: (CDT) A System and Service Manager
+  description: |
+    systemd is a system and service manager for Linux, compatible with SysV and
+    LSB init scripts. systemd provides aggressive parallelization capabilities,
+    uses socket and D-Bus activation for starting services, offers on-demand
+    starting of daemons, keeps track of processes using Linux cgroups, supports
+    snapshotting and restoring of the system state, maintains mount and automount
+    points and implements an elaborate transactional dependency-based service
+    control logic. It can work as a drop-in replacement for sysvinit.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/help-cdts
