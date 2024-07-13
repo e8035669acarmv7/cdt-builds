@@ -217,9 +217,9 @@ def _gen_cdts(single_sysroot):
             "centos7": {
                 "dirname": "centos7",
                 "short_name": "cos7",
-                "base_url": "http://mirror.centos.org/centos/7/os/{base_architecture}/CentOS/",  # noqa
+                "base_url": "http://vault.centos.org/centos/7/os/{base_architecture}/CentOS/",  # noqa
                 "sbase_url": "http://vault.centos.org/7.7.1908/os/Source/SPackages/",
-                "repomd_url": "http://mirror.centos.org/centos/7/os/{base_architecture}/repodata/repomd.xml",  # noqa
+                "repomd_url": "http://vault.centos.org/centos/7/os/{base_architecture}/repodata/repomd.xml",  # noqa
                 "host_machine": (
                     "{architecture}-conda-linux-gnu"
                     if single_sysroot else
@@ -240,9 +240,9 @@ def _gen_cdts(single_sysroot):
             "centos7-alt": {
                 "dirname": "centos7",
                 "short_name": "cos7",
-                "base_url": "http://mirror.centos.org/altarch/7/os/{base_architecture}/CentOS/",  # noqa
+                "base_url": "http://vault.centos.org/altarch/7/os/{base_architecture}/CentOS/",  # noqa
                 "sbase_url": "http://vault.centos.org/7.7.1908/os/Source/SPackages/",
-                "repomd_url": "http://mirror.centos.org/altarch/7/os/{base_architecture}/repodata/repomd.xml",  # noqa
+                "repomd_url": "http://vault.centos.org/altarch/7/os/{base_architecture}/repodata/repomd.xml",  # noqa
                 "host_machine": (
                     "{gnu_architecture}-conda-linux-gnu"
                     if single_sysroot else
@@ -263,9 +263,9 @@ def _gen_cdts(single_sysroot):
             "centos7-altarm": {
                 "dirname": "centos7",
                 "short_name": "cos7",
-                "base_url": "http://mirror.centos.org/altarch/7/os/{base_architecture}/CentOS/",  # noqa
+                "base_url": "http://vault.centos.org/altarch/7/os/{base_architecture}/CentOS/",  # noqa
                 "sbase_url": "http://vault.centos.org/7.7.1908/os/Source/SPackages/",
-                "repomd_url": "http://mirror.centos.org/altarch/7/os/{base_architecture}/repodata/repomd.xml",  # noqa
+                "repomd_url": "http://vault.centos.org/altarch/7/os/{base_architecture}/repodata/repomd.xml",  # noqa
                 "host_machine": (
                     "{gnu_architecture}-conda-linux-gnueabihf"
                     if single_sysroot else
@@ -581,6 +581,7 @@ def valid_depends(depends):
             or name.endswith("(x86-64)")
             or name.endswith("(aarch-64)")
             or name.endswith("(ppc-64)")
+            or name.endswith("(armv7hl-32)")
         )
         and str_flags
     ):
@@ -752,7 +753,7 @@ def write_conda_recipes(
     for depend in depends:
         # replace of "(x86-64)", "(aarch-64)"
         # hack around bad repo data upstream for libXtst-devel
-        for tail in ["(x86-64)", "(aarch-64)", "(ppc-64)"]:
+        for tail in ["(x86-64)", "(aarch-64)", "(ppc-64)", "(armv7hl-32)"]:
             if depend["name"].endswith(tail):
                 depend["name"] = depend["name"][:-len(tail)]
 
