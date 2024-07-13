@@ -215,7 +215,7 @@ def _fix_cdt_licenses(*, cdts, arch_dist_tuples, cdt_path):
                     yaml.width = 320
                     with open(os.path.join(pth, "meta.yaml"), "r") as fp:
                         meta = yaml.load(fp)
-                except Exception:
+                except Exception as ex:
                     print("ERROR: could not adjust license for %s" % pth)
                     continue
                 if cfg["license_file"] is None:

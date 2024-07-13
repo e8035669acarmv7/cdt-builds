@@ -114,12 +114,14 @@ gdk-pixbuf2:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
 gdk-pixbuf2-devel:
   custom: false
   skipped_cdts:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
 glib-networking:
   custom: false
 glib2:
@@ -207,6 +209,7 @@ jpackage-utils:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
 kernel-headers:
   custom: false
   license_file: null
@@ -290,12 +293,14 @@ libibcm:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
 libibcm-devel:
   custom: false
   skipped_cdts:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
   license_file: licenses/libibcm-devel-license
 libibmad:
   custom: false
@@ -326,6 +331,7 @@ libibumad-devel:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
   # `libibumad` is part of rdma-core and under the same licenses
   # https://github.com/linux-rdma/rdma-core/tree/v22.4/libibumad
   license_file:
@@ -348,6 +354,7 @@ libibverbs-devel:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
   license_file: licenses/libibverbs-devel-license
 libICE:
   custom: false
@@ -386,6 +393,7 @@ librdmacm-devel:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
   license_file: licenses/librdmacm-devel-license
 libselinux:
   custom: false
@@ -420,6 +428,7 @@ libudev:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
 libudev-devel:
   custom: true
   recursive: false  # generates an infinite recursion
@@ -427,6 +436,7 @@ libudev-devel:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
 libuuid:
   custom: false
   license_file: licenses/libuuid-license
@@ -557,6 +567,7 @@ mesa-dri1-drivers:
     - cos7-aarch64
     - cos7-ppc64le
     - cos7-x86_64
+    - cos7-armv7l
   license_file: licenses/mesa-license
 mesa-khr-devel:
   custom: false
@@ -585,6 +596,11 @@ mesa-libGL:
       popd > /dev/null 2>&1
     cos7-x86_64: |
       pushd ${SYSROOT_DIR}/usr/lib64 > /dev/null 2>&1
+      rm libGLX_system.so.0
+      ln -s libGLX_mesa.so.0 libGLX_system.so.0
+      popd > /dev/null 2>&1
+    cos7-armv7l: |
+      pushd ${SYSROOT_DIR}/usr/lib > /dev/null 2>&1
       rm libGLX_system.so.0
       ln -s libGLX_mesa.so.0 libGLX_system.so.0
       popd > /dev/null 2>&1
@@ -701,6 +717,12 @@ pango:
       echo -e '#!/usr/bin/env bash\n exit 0' > pango-querymodules-64
       chmod u+x pango-querymodules-64
       popd > /dev/null 2>&1
+    cos7-armv7l: |
+      pushd ${SYSROOT_DIR}/usr/bin > /dev/null 2>&1
+      rm -f pango-querymodules-32
+      echo -e '#!/usr/bin/env bash\n exit 0' > pango-querymodules-32
+      chmod u+x pango-querymodules-32
+      popd > /dev/null 2>&1
 pango-devel:
   custom: false
   license_file: licenses/pango-copying
@@ -778,6 +800,7 @@ webkitgtk:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
   license_file: licenses/webkitgtk-license
 webkitgtk-devel:
   custom: false
@@ -785,6 +808,7 @@ webkitgtk-devel:
     - cos7-x86_64
     - cos7-aarch64
     - cos7-ppc64le
+    - cos7-armv7l
   license_file: licenses/webkitgtk-license
 xcb-util:
   custom: false
