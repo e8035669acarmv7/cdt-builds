@@ -3,7 +3,7 @@ package:
   version: 0.8.14
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libIDL-devel-0.8.14-8.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libIDL-devel-0.8.14-8.el7.armv7hl.rpm
     sha256: c2d5631bb9b70542aeceb6c5accbd04af08b579cae4ead2677b022b139b4e2f4
     no_hoist: true
     folder: binary

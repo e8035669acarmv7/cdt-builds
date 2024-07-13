@@ -3,7 +3,7 @@ package:
   version: 18.3.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/mesa-libEGL-18.3.4-10.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/mesa-libEGL-18.3.4-10.el7.armv7hl.rpm
     sha256: e3f5b44cb57928ab6c56c47c1b7b46dcf70115a4051cbc23a698090430dc44e3
     no_hoist: true
     folder: binary
@@ -37,7 +37,7 @@ about:
   home: http://www.mesa3d.org
   license: MIT
   license_family: MIT
-  license_file: mesa-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Mesa libEGL runtime libraries"
   description: |
         Mesa libEGL runtime libraries

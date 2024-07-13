@@ -3,7 +3,7 @@ package:
   version: 0.4.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXcomposite-devel-0.4.4-4.1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXcomposite-devel-0.4.4-4.1.el7.armv7hl.rpm
     sha256: 1e5be3d67ea4adf111b46c39569643afedd66a57c8e167b9a3ec062ed8b94659
     no_hoist: true
     folder: binary

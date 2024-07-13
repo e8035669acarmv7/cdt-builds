@@ -3,7 +3,7 @@ package:
   version: 2.4.97
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libdrm-devel-2.4.97-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libdrm-devel-2.4.97-2.el7.armv7hl.rpm
     sha256: e0f18787609ea06616fd8298f6444b5bb940b731df1c934dd73d92f816489720
     no_hoist: true
     folder: binary
@@ -40,6 +40,7 @@ about:
   home: http://dri.sourceforge.net
   license: MIT
   license_family: MIT
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Direct Rendering Manager development package"
   description: |
         Direct Rendering Manager development package

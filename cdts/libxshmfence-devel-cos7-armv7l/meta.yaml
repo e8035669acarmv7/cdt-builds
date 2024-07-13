@@ -3,7 +3,7 @@ package:
   version: 1.2
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libxshmfence-devel-1.2-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libxshmfence-devel-1.2-1.el7.armv7hl.rpm
     sha256: 556629d49a323ae93c7c511906efebb82995dd092b51f80474bac8a62aaf6e71
     no_hoist: true
     folder: binary
@@ -37,7 +37,7 @@ about:
   home: http://www.x.org/
   license: MIT
   license_family: MIT
-  license_file: libxshmfence-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Development files for libxshmfence"
   description: |
         The libxshmfence-devel package contains libraries and header files for

@@ -3,7 +3,7 @@ package:
   version: 1.2.2
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXScrnSaver-1.2.2-6.1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXScrnSaver-1.2.2-6.1.el7.armv7hl.rpm
     sha256: e29e9efd126f8d0be34db6f38cc35bdf3d144c3f6100d70f91cb7afbc8373427
     no_hoist: true
     folder: binary

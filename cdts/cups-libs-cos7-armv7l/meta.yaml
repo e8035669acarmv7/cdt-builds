@@ -3,7 +3,7 @@ package:
   version: 1.6.3
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/cups-libs-1.6.3-51.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/cups-libs-1.6.3-51.el7.armv7hl.rpm
     sha256: 12c7a1def1e30b0ecd6591566f9f4c2a05205471c34dae685eee09508e7b2b65
     no_hoist: true
     folder: binary

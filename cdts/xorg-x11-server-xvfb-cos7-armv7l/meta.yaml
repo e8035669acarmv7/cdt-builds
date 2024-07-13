@@ -3,7 +3,7 @@ package:
   version: 1.20.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/xorg-x11-server-Xvfb-1.20.4-10.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/xorg-x11-server-Xvfb-1.20.4-10.el7.armv7hl.rpm
     sha256: 8af5cd0b02ac163d1f4fcc54c03069530ce733a396f3a637beaa349bb603a189
     no_hoist: true
     folder: binary

@@ -3,7 +3,7 @@ package:
   version: 2.9.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libxml2-2.9.1-6.el7.5.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libxml2-2.9.1-6.el7.5.armv7hl.rpm
     sha256: 930f7b38d721d214fe66734a3a68a32d493baa4acf87dbde934c30a25121f028
     no_hoist: true
     folder: binary

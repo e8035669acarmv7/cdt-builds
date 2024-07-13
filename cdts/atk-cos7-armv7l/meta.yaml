@@ -3,7 +3,7 @@ package:
   version: 2.28.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/atk-2.28.1-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/atk-2.28.1-2.el7.armv7hl.rpm
     sha256: 5fc599e7852c56aa9018aab5aa597a84a3288fed461133f6758ce16e82554f10
     no_hoist: true
     folder: binary

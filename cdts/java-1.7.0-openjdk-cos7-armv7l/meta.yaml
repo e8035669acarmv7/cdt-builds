@@ -3,7 +3,7 @@ package:
   version: 1.7.0.261
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/java-1.7.0-openjdk-1.7.0.261-2.6.22.2.el7_8.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/java-1.7.0-openjdk-1.7.0.261-2.6.22.2.el7_8.armv7hl.rpm
     sha256: 88d6192f5d666357fb94ae9b85e761826580b653227a650c954701e0dfb944c1
     no_hoist: true
     folder: binary

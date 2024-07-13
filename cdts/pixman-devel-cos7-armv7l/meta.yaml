@@ -3,7 +3,7 @@ package:
   version: 0.34.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/pixman-devel-0.34.0-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/pixman-devel-0.34.0-1.el7.armv7hl.rpm
     sha256: 6d2f0003a546683364857e6df1a33a54f60fddd7172afbae9ce811704cb3f29e
     no_hoist: true
     folder: binary

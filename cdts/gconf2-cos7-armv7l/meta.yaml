@@ -3,7 +3,7 @@ package:
   version: 3.2.6
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/GConf2-3.2.6-8.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/GConf2-3.2.6-8.el7.armv7hl.rpm
     sha256: 440cf1361623c510da69a07ba6238d39f7a9e07096588d4ec9e3c486ae2ebe8c
     no_hoist: true
     folder: binary

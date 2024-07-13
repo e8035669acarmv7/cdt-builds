@@ -3,7 +3,7 @@ package:
   version: 1.1.8
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/alsa-lib-devel-1.1.8-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/alsa-lib-devel-1.1.8-1.el7.armv7hl.rpm
     sha256: 3f411507234b5bf5f7c5a8dbd33a8e2ee53cabed9695a4293245897e98d855e8
     no_hoist: true
     folder: binary

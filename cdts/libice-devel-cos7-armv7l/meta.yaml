@@ -3,7 +3,7 @@ package:
   version: 1.0.9
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libICE-devel-1.0.9-9.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libICE-devel-1.0.9-9.el7.armv7hl.rpm
     sha256: 6d908039e24d7e698543e43bfd6bfc70f6d31253ddcb43086ce9c1289c4f9d41
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - libice-cos7-armv7l ==1.0.9 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - libice-cos7-armv7l ==1.0.9 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - libice-cos7-armv7l ==1.0.9 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

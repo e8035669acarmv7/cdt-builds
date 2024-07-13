@@ -3,7 +3,7 @@ package:
   version: 1.15.12
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/cairo-1.15.12-4.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/cairo-1.15.12-4.el7.armv7hl.rpm
     sha256: 355c6d52d9d12e027077d64000e48a0db37b18368fd885beee74d1983f3fd5a8
     no_hoist: true
     folder: binary

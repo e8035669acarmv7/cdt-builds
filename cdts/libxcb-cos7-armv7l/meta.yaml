@@ -3,7 +3,7 @@ package:
   version: 1.13
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libxcb-1.13-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libxcb-1.13-1.el7.armv7hl.rpm
     sha256: 5350d7e19ea4cbc51245e706220f82d8c4d701fb9c0b46991b1fd45e9525e8b2
     no_hoist: true
     folder: binary
@@ -33,7 +33,7 @@ about:
   home: https://xcb.freedesktop.org/
   license: MIT
   license_family: MIT
-  license_file: libxcb-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) A C binding to the X11 protocol"
   description: |
         The X protocol C-language Binding (XCB) is a replacement for Xlib featuring a

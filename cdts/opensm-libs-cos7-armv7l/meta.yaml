@@ -3,7 +3,7 @@ package:
   version: 3.3.21
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/opensm-libs-3.3.21-3.el7_8.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/opensm-libs-3.3.21-3.el7_8.armv7hl.rpm
     sha256: f3a9081adf9aa345da4a80a6d04040c6acb88e2bd7f2b722a5ad8abec6cf8166
     no_hoist: true
     folder: binary

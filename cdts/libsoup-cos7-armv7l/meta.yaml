@@ -3,7 +3,7 @@ package:
   version: 2.62.2
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libsoup-2.62.2-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libsoup-2.62.2-2.el7.armv7hl.rpm
     sha256: ab27ba9c23f67e0bc665490e7212f6350da4b57bc40a01d3bc27cc11e86a0c9f
     no_hoist: true
     folder: binary
@@ -20,9 +20,16 @@ build:
     - '*'
 
 requirements:
+  build:
+    - glib-networking-cos7-armv7l >=2.38.0 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-cos7-armv7l >=2.38.0 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - glib-networking-cos7-armv7l >=2.38.0 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-cos7-armv7l >=2.38.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - glib-networking-cos7-armv7l >=2.38.0 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-cos7-armv7l >=2.38.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

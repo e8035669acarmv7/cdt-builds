@@ -3,7 +3,7 @@ package:
   version: 5.4.28
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/kernel-headers-5.4.28-200.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/kernel-headers-5.4.28-200.el7.armv7hl.rpm
     sha256: d0ce04e3313a7297e2ce09ccd729fd9849625bcfd27624f47de38818622cc61a
     no_hoist: true
     folder: binary
@@ -33,7 +33,7 @@ about:
   home: https://www.kernel.org/
   license: GPLv2 and Redistributable, no modification permitted
   license_family: GPL2
-  # license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Header files for the Linux kernel for use by glibc"
   description: |
         Kernel-headers includes the C header files that specify the interface between

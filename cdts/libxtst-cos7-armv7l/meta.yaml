@@ -3,7 +3,7 @@ package:
   version: 1.2.3
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXtst-1.2.3-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXtst-1.2.3-1.el7.armv7hl.rpm
     sha256: 9878447bc86bb1cbf9d217e88a0caab182cd76bea7b3ab38669bbb2a9071fbab
     no_hoist: true
     folder: binary

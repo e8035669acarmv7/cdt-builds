@@ -3,7 +3,7 @@ package:
   version: 1.1.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXxf86vm-1.1.4-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXxf86vm-1.1.4-1.el7.armv7hl.rpm
     sha256: 0fddc27aa2b798b2f50232f5b82c65429cd4fac3230d329af5a29ebdbac75d38
     no_hoist: true
     folder: binary

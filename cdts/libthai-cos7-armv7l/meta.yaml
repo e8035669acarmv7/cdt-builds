@@ -3,7 +3,7 @@ package:
   version: 0.1.14
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libthai-0.1.14-9.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libthai-0.1.14-9.el7.armv7hl.rpm
     sha256: 51a3977082b59c46763adb875a87efd13462d8ae6cf47350f0f36bf05519b575
     no_hoist: true
     folder: binary

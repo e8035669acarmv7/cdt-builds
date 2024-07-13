@@ -3,7 +3,7 @@ package:
   version: 1.0.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libglvnd-1.0.1-0.8.git5baa1e5.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libglvnd-1.0.1-0.8.git5baa1e5.el7.armv7hl.rpm
     sha256: 121f054a5c7e3740a20d42bf1916f47855cc1fcb85421b4b4bf79879416939de
     no_hoist: true
     folder: binary
@@ -33,7 +33,7 @@ about:
   home: https://github.com/NVIDIA/libglvnd
   license: MIT
   license_family: MIT
-  license_file: libglvnd-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) The GL Vendor-Neutral Dispatch library"
   description: |
         libglvnd is an implementation of the vendor-neutral dispatch layer for

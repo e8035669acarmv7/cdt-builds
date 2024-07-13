@@ -3,7 +3,7 @@ package:
   version: 2.24.31
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/gtk2-2.24.31-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/gtk2-2.24.31-1.el7.armv7hl.rpm
     sha256: 9d61edf9a1431951fc19757d7cae6345c4c31266aaf533c9989c0d2ed55864ea
     no_hoist: true
     folder: binary

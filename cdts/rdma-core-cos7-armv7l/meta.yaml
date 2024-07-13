@@ -3,7 +3,7 @@ package:
   version: 22.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/rdma-core-22.4-5.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/rdma-core-22.4-5.el7.armv7hl.rpm
     sha256: 6f9fb33244f95e6cd9c96418eb7c99b2e32c3cfc61c89e6787552b66beaf5ae2
     no_hoist: true
     folder: binary

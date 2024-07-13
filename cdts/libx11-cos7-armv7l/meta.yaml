@@ -3,7 +3,7 @@ package:
   version: 1.6.7
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libX11-1.6.7-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libX11-1.6.7-2.el7.armv7hl.rpm
     sha256: dd5a5bad3f572d9413c03f195f0199c8c891163aa9cca246bb03900cb03d4ba6
     no_hoist: true
     folder: binary
@@ -37,7 +37,7 @@ about:
   home: http://www.x.org
   license: MIT
   license_family: MIT
-  license_file: x11-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Core X11 protocol client library"
   description: |
         Core X11 protocol client library.

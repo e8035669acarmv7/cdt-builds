@@ -3,7 +3,7 @@ package:
   version: 2.24.5
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/gtkmm24-devel-2.24.5-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/gtkmm24-devel-2.24.5-1.el7.armv7hl.rpm
     sha256: 0b0611a7ada70ce4053e6f879b8fef2cd6daa8372aa92ddf477b569b34f04ffa
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - gtkmm24-cos7-armv7l ==2.24.5 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - gtkmm24-cos7-armv7l ==2.24.5 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - gtkmm24-cos7-armv7l ==2.24.5 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

@@ -3,7 +3,7 @@ package:
   version: 22.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/rdma-core-devel-22.4-5.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/rdma-core-devel-22.4-5.el7.armv7hl.rpm
     sha256: 9bebccb90b2a5f6dae45a5a572377a2fac4e9bd321cbf4a94053f0ccc1bc46c7
     no_hoist: true
     folder: binary
@@ -25,17 +25,20 @@ requirements:
     - libibumad-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - libibverbs-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - librdmacm-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
+    - rdma-core-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
   host:
     - ibacm-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - libibumad-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - libibverbs-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - librdmacm-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
+    - rdma-core-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
     - ibacm-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - libibumad-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - libibverbs-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - librdmacm-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
+    - rdma-core-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

@@ -3,7 +3,7 @@ package:
   version: 1.42.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/pango-1.42.4-4.el7_7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/pango-1.42.4-4.el7_7.armv7hl.rpm
     sha256: a71be09e0906bedf9376f8d16b8a4878ef6b34792d1fc3aa3d957da9a37dd6d9
     no_hoist: true
     folder: binary
@@ -20,9 +20,34 @@ build:
     - '*'
 
 requirements:
+  build:
+    - cairo-cos7-armv7l >=1.12.10 *_{{ cdt_build_number|int + 1000 }}
+    - fontconfig-cos7-armv7l >=2.11.91 *_{{ cdt_build_number|int + 1000 }}
+    - freetype-cos7-armv7l >=2.1.5 *_{{ cdt_build_number|int + 1000 }}
+    - fribidi-cos7-armv7l >=1.0 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-cos7-armv7l >=2.56.1 *_{{ cdt_build_number|int + 1000 }}
+    - harfbuzz-cos7-armv7l >=1.4.2 *_{{ cdt_build_number|int + 1000 }}
+    - libxft-cos7-armv7l >=2.0.0 *_{{ cdt_build_number|int + 1000 }}
+    - libthai-cos7-armv7l >=0.1.9 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - cairo-cos7-armv7l >=1.12.10 *_{{ cdt_build_number|int + 1000 }}
+    - fontconfig-cos7-armv7l >=2.11.91 *_{{ cdt_build_number|int + 1000 }}
+    - freetype-cos7-armv7l >=2.1.5 *_{{ cdt_build_number|int + 1000 }}
+    - fribidi-cos7-armv7l >=1.0 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-cos7-armv7l >=2.56.1 *_{{ cdt_build_number|int + 1000 }}
+    - harfbuzz-cos7-armv7l >=1.4.2 *_{{ cdt_build_number|int + 1000 }}
+    - libxft-cos7-armv7l >=2.0.0 *_{{ cdt_build_number|int + 1000 }}
+    - libthai-cos7-armv7l >=0.1.9 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - cairo-cos7-armv7l >=1.12.10 *_{{ cdt_build_number|int + 1000 }}
+    - fontconfig-cos7-armv7l >=2.11.91 *_{{ cdt_build_number|int + 1000 }}
+    - freetype-cos7-armv7l >=2.1.5 *_{{ cdt_build_number|int + 1000 }}
+    - fribidi-cos7-armv7l >=1.0 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-cos7-armv7l >=2.56.1 *_{{ cdt_build_number|int + 1000 }}
+    - harfbuzz-cos7-armv7l >=1.4.2 *_{{ cdt_build_number|int + 1000 }}
+    - libxft-cos7-armv7l >=2.0.0 *_{{ cdt_build_number|int + 1000 }}
+    - libthai-cos7-armv7l >=0.1.9 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

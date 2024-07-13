@@ -3,7 +3,7 @@ package:
   version: 2.13.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/fontconfig-2.13.0-4.3.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/fontconfig-2.13.0-4.3.el7.armv7hl.rpm
     sha256: a781cc4b67fd15a1a6e2d22389f74606fea866d861a2c64ff71f6d7d876ea7c4
     no_hoist: true
     folder: binary

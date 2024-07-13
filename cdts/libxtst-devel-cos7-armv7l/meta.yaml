@@ -3,7 +3,7 @@ package:
   version: 1.2.3
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXtst-devel-1.2.3-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXtst-devel-1.2.3-1.el7.armv7hl.rpm
     sha256: 4a5530f879a3e421039d4320e0a662140bd12cb42a72ead740b2674e90b35c22
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - libxtst-cos7-armv7l ==1.2.3 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - libxtst-cos7-armv7l ==1.2.3 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - libxtst-cos7-armv7l ==1.2.3 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

@@ -3,7 +3,7 @@ package:
   version: 1.5.13
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libpng-1.5.13-8.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libpng-1.5.13-8.el7.armv7hl.rpm
     sha256: f223b7c8b329e3c9cd0dc27ad2d5b365bf4ca6fd97ba233de71283ef0e0fadc3
     no_hoist: true
     folder: binary

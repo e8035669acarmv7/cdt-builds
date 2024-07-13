@@ -3,7 +3,7 @@ package:
   version: 1.1.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libnl-1.1.4-3.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libnl-1.1.4-3.el7.armv7hl.rpm
     sha256: e49b9c2cc71d3257fa8e7cba94655770d842ac2b1594153fca7c9079c3f18a8b
     no_hoist: true
     folder: binary

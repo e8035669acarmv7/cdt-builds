@@ -3,7 +3,7 @@ package:
   version: 18.3.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/mesa-khr-devel-18.3.4-10.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/mesa-khr-devel-18.3.4-10.el7.armv7hl.rpm
     sha256: b96994680853a78ce344319f0dbfe48c9034357ea017af62c7fc539f0297dd9d
     no_hoist: true
     folder: binary
@@ -33,7 +33,7 @@ about:
   home: http://www.mesa3d.org
   license: MIT
   license_family: MIT
-  license_file: mesa-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Mesa Khronos development headers"
   description: |
         Mesa Khronos development headers

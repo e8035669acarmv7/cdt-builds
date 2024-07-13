@@ -3,7 +3,7 @@ package:
   version: 2.56.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/glib-networking-2.56.1-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/glib-networking-2.56.1-1.el7.armv7hl.rpm
     sha256: 8b83fd1e8421c152cc11a43a89abc594c271f774e98b29039997065be18f6e5d
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - glib2-cos7-armv7l >=2.55.1 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - glib2-cos7-armv7l >=2.55.1 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - glib2-cos7-armv7l >=2.55.1 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

@@ -3,7 +3,7 @@ package:
   version: 1.0.2
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/fribidi-1.0.2-1.el7_7.1.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/fribidi-1.0.2-1.el7_7.1.armv7hl.rpm
     sha256: 79f4267d4549aa0f891ec6bace9424ab149389abb908d8c1cbf63eebbb23a59a
     no_hoist: true
     folder: binary

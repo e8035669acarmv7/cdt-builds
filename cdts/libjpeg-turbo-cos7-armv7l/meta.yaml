@@ -3,7 +3,7 @@ package:
   version: 1.2.90
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libjpeg-turbo-1.2.90-8.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libjpeg-turbo-1.2.90-8.el7.armv7hl.rpm
     sha256: 3c813bf9a5bb958a5a46bc635176737c8fefb20d9186832522342cb21c2bb823
     no_hoist: true
     folder: binary

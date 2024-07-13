@@ -3,7 +3,7 @@ package:
   version: 1.1.15
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXcursor-1.1.15-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXcursor-1.1.15-1.el7.armv7hl.rpm
     sha256: 4d9f80f9cc7904a846023e9e6aa15ece32f3429a1293cf7d078881ab7bffefea
     no_hoist: true
     folder: binary

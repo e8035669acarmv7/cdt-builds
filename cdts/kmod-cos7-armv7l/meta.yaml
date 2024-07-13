@@ -3,7 +3,7 @@ package:
   version: 20
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/kmod-20-28.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/kmod-20-28.el7.armv7hl.rpm
     sha256: c41d3cac08d862d85b406d4a16dbc4ac01d475e5bc9ec4aae5188a79b3bdd003
     no_hoist: true
     folder: binary

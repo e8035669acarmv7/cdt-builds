@@ -3,7 +3,7 @@ package:
   version: 1.13
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libxcb-devel-1.13-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libxcb-devel-1.13-1.el7.armv7hl.rpm
     sha256: 27bc8d2469f481a70d5cfc7d16cfa62237dc38f2098ec0e4680d1129bd57acc3
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - libxcb-cos7-armv7l ==1.13 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - libxcb-cos7-armv7l ==1.13 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - libxcb-cos7-armv7l ==1.13 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

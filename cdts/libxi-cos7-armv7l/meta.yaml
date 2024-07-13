@@ -3,7 +3,7 @@ package:
   version: 1.7.9
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXi-1.7.9-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXi-1.7.9-1.el7.armv7hl.rpm
     sha256: 0c2df9c11b8cf933256b7b84e2f7f41f1b7c4c931734e45750bbae3d50ad5878
     no_hoist: true
     folder: binary

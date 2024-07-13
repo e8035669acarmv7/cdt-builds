@@ -3,7 +3,7 @@ package:
   version: 1.0.9
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libICE-1.0.9-9.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libICE-1.0.9-9.el7.armv7hl.rpm
     sha256: b14dfe928e04c0782734e2759c4c6f44402ad068a906173adf80ec15a1f2d39a
     no_hoist: true
     folder: binary

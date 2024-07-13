@@ -3,7 +3,7 @@ package:
   version: 22.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/librdmacm-22.4-5.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/librdmacm-22.4-5.el7.armv7hl.rpm
     sha256: ec1d366b87682b8d33049a2ee7d2bb478e6a645df662ed7bda68cc3f3aa83bd5
     no_hoist: true
     folder: binary
@@ -20,9 +20,16 @@ build:
     - '*'
 
 requirements:
+  build:
+    - libibverbs-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
+    - rdma-core-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - libibverbs-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
+    - rdma-core-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - libibverbs-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
+    - rdma-core-cos7-armv7l ==22.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

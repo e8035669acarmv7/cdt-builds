@@ -3,7 +3,7 @@ package:
   version: 2.5
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libsepol-2.5-10.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libsepol-2.5-10.el7.armv7hl.rpm
     sha256: 938475cf47a4ffe07b581f4f7c375a89ee4528012a3f5fde69a60bad0a5cc53e
     no_hoist: true
     folder: binary

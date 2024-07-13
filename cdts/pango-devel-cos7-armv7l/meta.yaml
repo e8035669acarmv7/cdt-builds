@@ -3,7 +3,7 @@ package:
   version: 1.42.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/pango-devel-1.42.4-4.el7_7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/pango-devel-1.42.4-4.el7_7.armv7hl.rpm
     sha256: 04a30528a349a3d0192edb437b678a1503835f06473b93d27b9fdd437afdf61c
     no_hoist: true
     folder: binary
@@ -20,9 +20,25 @@ build:
     - '*'
 
 requirements:
+  build:
+    - cairo-devel-cos7-armv7l >=1.12.10 *_{{ cdt_build_number|int + 1000 }}
+    - fontconfig-devel-cos7-armv7l >=2.11.91 *_{{ cdt_build_number|int + 1000 }}
+    - freetype-devel-cos7-armv7l >=2.1.5 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-devel-cos7-armv7l >=2.56.1 *_{{ cdt_build_number|int + 1000 }}
+    - pango-cos7-armv7l ==1.42.4 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - cairo-devel-cos7-armv7l >=1.12.10 *_{{ cdt_build_number|int + 1000 }}
+    - fontconfig-devel-cos7-armv7l >=2.11.91 *_{{ cdt_build_number|int + 1000 }}
+    - freetype-devel-cos7-armv7l >=2.1.5 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-devel-cos7-armv7l >=2.56.1 *_{{ cdt_build_number|int + 1000 }}
+    - pango-cos7-armv7l ==1.42.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - cairo-devel-cos7-armv7l >=1.12.10 *_{{ cdt_build_number|int + 1000 }}
+    - fontconfig-devel-cos7-armv7l >=2.11.91 *_{{ cdt_build_number|int + 1000 }}
+    - freetype-devel-cos7-armv7l >=2.1.5 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-devel-cos7-armv7l >=2.56.1 *_{{ cdt_build_number|int + 1000 }}
+    - pango-cos7-armv7l ==1.42.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

@@ -3,7 +3,7 @@ package:
   version: 5.0.3
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXfixes-5.0.3-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXfixes-5.0.3-1.el7.armv7hl.rpm
     sha256: 7570500cbfe9515fa62112ca5e8fa766f28f3a7119a97b82b553fc2114516cc5
     no_hoist: true
     folder: binary

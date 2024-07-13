@@ -3,7 +3,7 @@ package:
   version: 4.21.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/nspr-4.21.0-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/nspr-4.21.0-1.el7.armv7hl.rpm
     sha256: ca4f9ebe26e88b51808b0a695867d4baafe5a447d6be515705593d9dcccb955d
     no_hoist: true
     folder: binary

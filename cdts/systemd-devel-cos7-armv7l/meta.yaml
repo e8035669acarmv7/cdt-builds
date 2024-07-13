@@ -3,7 +3,7 @@ package:
   version: 219
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/systemd-devel-219-78.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/systemd-devel-219-78.el7.armv7hl.rpm
     sha256: 4175fe3565ffe85a360acf4bda779cd6f66895f853380de1918dd0db4bc120b9
     no_hoist: true
     folder: binary

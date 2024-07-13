@@ -3,7 +3,7 @@ package:
   version: 1.1.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXdamage-devel-1.1.4-4.1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXdamage-devel-1.1.4-4.1.el7.armv7hl.rpm
     sha256: 518204fc1a666f99b142c95dd646af082d2f0c5f1f94131b73972f5151903575
     no_hoist: true
     folder: binary
@@ -37,7 +37,7 @@ about:
   home: http://www.x.org
   license: MIT
   license_family: MIT
-  license_file: libxdamage-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Development files for libXdamage"
   description: |
         X.Org X11 libXdamage development package.

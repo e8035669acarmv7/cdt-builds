@@ -3,7 +3,7 @@ package:
   version: 2.1.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/expat-devel-2.1.0-12.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/expat-devel-2.1.0-12.el7.armv7hl.rpm
     sha256: bf3c47d06895e9c5498a58471442ff3de80c2b4faa7e2d13614ec13195a70044
     no_hoist: true
     folder: binary
@@ -37,7 +37,7 @@ about:
   home: http://www.libexpat.org/
   license: MIT
   license_family: MIT
-  license_file: expat-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Libraries and header files to develop applications using expat"
   description: |
         The expat-devel package contains the libraries, include files and

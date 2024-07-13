@@ -3,7 +3,7 @@ package:
   version: 2.23.2
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libuuid-devel-2.23.2-65.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libuuid-devel-2.23.2-65.el7.armv7hl.rpm
     sha256: a4910d59d4acce72bf4a4793e376541c6c35498049592cd543812bd685475f84
     no_hoist: true
     folder: binary

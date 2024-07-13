@@ -3,7 +3,7 @@ package:
   version: 0.23.5
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/p11-kit-0.23.5-3.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/p11-kit-0.23.5-3.el7.armv7hl.rpm
     sha256: bb1c63b519565249aa76cccc801dca105c8e2c5084509242e4da0197ee70dc66
     no_hoist: true
     folder: binary

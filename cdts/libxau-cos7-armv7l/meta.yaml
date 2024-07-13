@@ -3,7 +3,7 @@ package:
   version: 1.0.8
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXau-1.0.8-2.1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXau-1.0.8-2.1.el7.armv7hl.rpm
     sha256: 1916390d3ed014239a6934e7ae24d33c7ddbfeb2fd3446b322386281f6687bac
     no_hoist: true
     folder: binary

@@ -3,7 +3,7 @@ package:
   version: 1.2.2
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libSM-1.2.2-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libSM-1.2.2-2.el7.armv7hl.rpm
     sha256: c1bde053c04f1c1c00de95cc094765b314494b9e0b114bbc5368c40e1a077031
     no_hoist: true
     folder: binary

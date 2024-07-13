@@ -3,7 +3,7 @@ package:
   version: 0.4.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/xcb-util-wm-devel-0.4.1-5.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/xcb-util-wm-devel-0.4.1-5.el7.armv7hl.rpm
     sha256: 05c5fd581c18b9026b4eaf63a012c739ff580794d29c0dd5e4861849bcd7b5cd
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - xcb-util-wm-cos7-armv7l ==0.4.1 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - xcb-util-wm-cos7-armv7l ==0.4.1 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - xcb-util-wm-cos7-armv7l ==0.4.1 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

@@ -3,7 +3,7 @@ package:
   version: 3.3.21
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/opensm-devel-3.3.21-3.el7_8.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/opensm-devel-3.3.21-3.el7_8.armv7hl.rpm
     sha256: 9f62790c66ecbdf8e1cc33d0cf089574a5f27f7816abfc4f0a84c9475dc69ec6
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - opensm-libs-cos7-armv7l ==3.3.21 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - opensm-libs-cos7-armv7l ==3.3.21 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - opensm-libs-cos7-armv7l ==3.3.21 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

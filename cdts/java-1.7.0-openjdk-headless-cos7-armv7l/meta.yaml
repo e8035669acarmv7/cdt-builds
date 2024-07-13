@@ -3,7 +3,7 @@ package:
   version: 1.7.0.261
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/java-1.7.0-openjdk-headless-1.7.0.261-2.6.22.2.el7_8.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/java-1.7.0-openjdk-headless-1.7.0.261-2.6.22.2.el7_8.armv7hl.rpm
     sha256: 70cfaef11922a2b7943a5346816fafde07cd20bb78d604bfafe1ece28946b399
     no_hoist: true
     folder: binary
@@ -25,17 +25,23 @@ requirements:
     - chkconfig-cos7-armv7l >=1.7 *_{{ cdt_build_number|int + 1000 }}
     - copy-jdk-configs-cos7-armv7l >=3.3 *_{{ cdt_build_number|int + 1000 }}
     - jpackage-utils-cos7-armv7l >=3.4.1 *_{{ cdt_build_number|int + 1000 }}
+    - nss-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
   host:
     - chkconfig-cos7-armv7l >=1.7 *_{{ cdt_build_number|int + 1000 }}
     - chkconfig-cos7-armv7l >=1.7 *_{{ cdt_build_number|int + 1000 }}
     - copy-jdk-configs-cos7-armv7l >=3.3 *_{{ cdt_build_number|int + 1000 }}
     - jpackage-utils-cos7-armv7l >=3.4.1 *_{{ cdt_build_number|int + 1000 }}
+    - nss-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
     - chkconfig-cos7-armv7l >=1.7 *_{{ cdt_build_number|int + 1000 }}
     - chkconfig-cos7-armv7l >=1.7 *_{{ cdt_build_number|int + 1000 }}
     - copy-jdk-configs-cos7-armv7l >=3.3 *_{{ cdt_build_number|int + 1000 }}
     - jpackage-utils-cos7-armv7l >=3.4.1 *_{{ cdt_build_number|int + 1000 }}
+    - nss-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

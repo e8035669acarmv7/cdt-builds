@@ -3,7 +3,7 @@ package:
   version: 0.27.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/pkgconfig-0.27.1-4.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/pkgconfig-0.27.1-4.el7.armv7hl.rpm
     sha256: 57a470d56e41c4de10d0a05ee124a773fe58c35573a846734c448d2f85d35199
     no_hoist: true
     folder: binary

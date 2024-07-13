@@ -3,7 +3,7 @@ package:
   version: 4.0.3
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libtiff-4.0.3-35.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libtiff-4.0.3-35.el7.armv7hl.rpm
     sha256: 628fdf10312236b61e0fd51591f06b0bd75a82a50601476277d995c54450a8c5
     no_hoist: true
     folder: binary

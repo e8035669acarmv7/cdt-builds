@@ -3,7 +3,7 @@ package:
   version: 8.32
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/pcre-8.32-17.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/pcre-8.32-17.el7.armv7hl.rpm
     sha256: b3eed0d1b658bed0f03261a86bb9355d82bf1cd0ed2d2197b28a2a122edbaf04
     no_hoist: true
     folder: binary

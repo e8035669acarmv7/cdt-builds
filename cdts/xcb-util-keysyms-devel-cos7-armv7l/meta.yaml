@@ -3,7 +3,7 @@ package:
   version: 0.4.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/xcb-util-keysyms-devel-0.4.0-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/xcb-util-keysyms-devel-0.4.0-1.el7.armv7hl.rpm
     sha256: ad242c5e358c016ce5b24106aafdef91f059cac2112b0e9be6677ca20e3831ac
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - xcb-util-keysyms-cos7-armv7l ==0.4.0 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - xcb-util-keysyms-cos7-armv7l ==0.4.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - xcb-util-keysyms-cos7-armv7l ==0.4.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

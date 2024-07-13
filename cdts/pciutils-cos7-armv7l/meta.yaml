@@ -3,7 +3,7 @@ package:
   version: 3.5.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/pciutils-3.5.1-3.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/pciutils-3.5.1-3.el7.armv7hl.rpm
     sha256: 9d976adb9e40a784be1d295cdeff54c501b16a853dbc90243c34a6d1ce7ffcc4
     no_hoist: true
     folder: binary

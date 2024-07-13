@@ -3,7 +3,7 @@ package:
   version: 3.44.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/nss-util-3.44.0-4.el7_7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/nss-util-3.44.0-4.el7_7.armv7hl.rpm
     sha256: 2684259ea0690c7cbb7d48cfa0170188afbc27487ddd4d08c35bd6bc16d236c0
     no_hoist: true
     folder: binary

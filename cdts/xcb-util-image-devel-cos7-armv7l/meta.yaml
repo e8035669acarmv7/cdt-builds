@@ -3,7 +3,7 @@ package:
   version: 0.4.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/xcb-util-image-devel-0.4.0-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/xcb-util-image-devel-0.4.0-2.el7.armv7hl.rpm
     sha256: 71c1a18086fb031f6b2fcb5941062b668dc93126d3fa0f4a043344d55aa4a2f1
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - xcb-util-image-cos7-armv7l ==0.4.0 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - xcb-util-image-cos7-armv7l ==0.4.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - xcb-util-image-cos7-armv7l ==0.4.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

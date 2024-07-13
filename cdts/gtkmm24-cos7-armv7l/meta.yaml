@@ -3,7 +3,7 @@ package:
   version: 2.24.5
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/gtkmm24-2.24.5-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/gtkmm24-2.24.5-1.el7.armv7hl.rpm
     sha256: 1cd2a09ef9fd0412dd76c4ce81b4b831951d2ab9b5651db819bb7e322cd7334f
     no_hoist: true
     folder: binary

@@ -3,7 +3,7 @@ package:
   version: 1.6.3
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/cups-devel-1.6.3-51.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/cups-devel-1.6.3-51.el7.armv7hl.rpm
     sha256: 33826e916764b0fe347f5eeddcf8471b9308078342c4c3b5c0dc9615eaa448b9
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - cups-libs-cos7-armv7l ==1.6.3 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - cups-libs-cos7-armv7l ==1.6.3 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - cups-libs-cos7-armv7l ==1.6.3 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

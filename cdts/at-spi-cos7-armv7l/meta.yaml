@@ -3,7 +3,7 @@ package:
   version: 1.32.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/at-spi-1.32.0-12.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/at-spi-1.32.0-12.el7.armv7hl.rpm
     sha256: fdc8735d2d2fad20866dca43f27bd8eef46c1ed37b0b767914bd88993d7479ad
     no_hoist: true
     folder: binary

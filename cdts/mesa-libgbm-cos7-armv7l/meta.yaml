@@ -3,7 +3,7 @@ package:
   version: 18.3.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/mesa-libgbm-18.3.4-10.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/mesa-libgbm-18.3.4-10.el7.armv7hl.rpm
     sha256: 1e2dea29d1f8798d9884d4d168059e2479cf96ae49ed5e107c32a40789b1a6ce
     no_hoist: true
     folder: binary
@@ -40,7 +40,7 @@ about:
   home: http://www.mesa3d.org
   license: MIT
   license_family: MIT
-  license_file: mesa-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Mesa gbm library"
   description: |
         Mesa gbm runtime library.

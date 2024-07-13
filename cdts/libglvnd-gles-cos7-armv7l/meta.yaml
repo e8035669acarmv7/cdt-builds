@@ -3,7 +3,7 @@ package:
   version: 1.0.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libglvnd-gles-1.0.1-0.8.git5baa1e5.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libglvnd-gles-1.0.1-0.8.git5baa1e5.el7.armv7hl.rpm
     sha256: 8c9d95ca7c3ee5bf1ed77c411550b9fdaf411761ca8aece2855402ef1bee94a7
     no_hoist: true
     folder: binary
@@ -20,9 +20,16 @@ build:
     - '*'
 
 requirements:
+  build:
+    - libglvnd-cos7-armv7l ==1.0.1 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libegl-cos7-armv7l >=13.0.4 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - libglvnd-cos7-armv7l ==1.0.1 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libegl-cos7-armv7l >=13.0.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - libglvnd-cos7-armv7l ==1.0.1 *_{{ cdt_build_number|int + 1000 }}
+    - mesa-libegl-cos7-armv7l >=13.0.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

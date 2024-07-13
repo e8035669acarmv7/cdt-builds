@@ -3,7 +3,7 @@ package:
   version: 1.1.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXdamage-1.1.4-4.1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXdamage-1.1.4-4.1.el7.armv7hl.rpm
     sha256: 62081787c5367de31d457fc2e4e5579dd02946f712ef3434099955ab95214eda
     no_hoist: true
     folder: binary

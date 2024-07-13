@@ -3,7 +3,7 @@ package:
   version: 2.5
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libsepol-devel-2.5-10.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libsepol-devel-2.5-10.el7.armv7hl.rpm
     sha256: 844e833c5b5be10cf08afaeb94d918b0d0b5d24886ff13cabb88a13b72ac9730
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - libsepol-cos7-armv7l ==2.5 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - libsepol-cos7-armv7l ==2.5 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - libsepol-cos7-armv7l ==2.5 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

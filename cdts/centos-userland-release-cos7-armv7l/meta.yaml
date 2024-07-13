@@ -3,7 +3,7 @@ package:
   version: 7
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/centos-userland-release-7-9.2009.0.el7.centos.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/centos-userland-release-7-9.2009.0.el7.centos.armv7hl.rpm
     sha256: ddb2f55cfc4e8a9458b50020b2b13d68eb707d5bc49aadf99d39382935f5c4ae
     no_hoist: true
     folder: binary

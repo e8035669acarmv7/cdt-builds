@@ -3,7 +3,7 @@ package:
   version: 1.5.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXrandr-devel-1.5.1-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXrandr-devel-1.5.1-2.el7.armv7hl.rpm
     sha256: 3e4236ac0e82b8465036fd6a23eda96506adae9c63d40ab3d58d866de7b5d7c1
     no_hoist: true
     folder: binary

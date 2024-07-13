@@ -3,7 +3,7 @@ package:
   version: 1.7.5
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/harfbuzz-1.7.5-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/harfbuzz-1.7.5-2.el7.armv7hl.rpm
     sha256: f392effca4d0750c489ceb6d632894bcc871c24e8daad7955f4e17dbf5b756c5
     no_hoist: true
     folder: binary

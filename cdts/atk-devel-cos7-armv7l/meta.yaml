@@ -3,7 +3,7 @@ package:
   version: 2.28.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/atk-devel-2.28.1-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/atk-devel-2.28.1-2.el7.armv7hl.rpm
     sha256: 9cc9df09ca42d8fc515c3fd927ad8d9c1715f364c7aa47ca4a286a0841312225
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - atk-cos7-armv7l ==2.28.1 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - atk-cos7-armv7l ==2.28.1 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - atk-cos7-armv7l ==2.28.1 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

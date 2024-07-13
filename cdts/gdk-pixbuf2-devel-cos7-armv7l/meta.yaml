@@ -3,7 +3,7 @@ package:
   version: 2.36.12
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/gdk-pixbuf2-devel-2.36.12-3.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/gdk-pixbuf2-devel-2.36.12-3.el7.armv7hl.rpm
     sha256: 45ca54dca31eef3e271d28a30935b8507c6ffe84e263c73a95457eb51febeea7
     no_hoist: true
     folder: binary
@@ -20,9 +20,16 @@ build:
     - '*'
 
 requirements:
+  build:
+    - gdk-pixbuf2-cos7-armv7l ==2.36.12 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-devel-cos7-armv7l >=2.48.0 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - gdk-pixbuf2-cos7-armv7l ==2.36.12 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-devel-cos7-armv7l >=2.48.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - gdk-pixbuf2-cos7-armv7l ==2.36.12 *_{{ cdt_build_number|int + 1000 }}
+    - glib2-devel-cos7-armv7l >=2.48.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

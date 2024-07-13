@@ -3,7 +3,7 @@ package:
   version: 2.32.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libbonobo-devel-2.32.1-7.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libbonobo-devel-2.32.1-7.el7.armv7hl.rpm
     sha256: b4fe59bba5b281b1d8b3c720da33277e9ba2a26d5ffccd64308478106eabd081
     no_hoist: true
     folder: binary

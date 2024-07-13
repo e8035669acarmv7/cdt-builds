@@ -3,7 +3,7 @@ package:
   version: 0.3.9
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/xcb-util-renderutil-0.3.9-3.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/xcb-util-renderutil-0.3.9-3.el7.armv7hl.rpm
     sha256: b68a5d80079b469dc2d69a3e77279382b7be3e9f44000f438e756093b19f5f62
     no_hoist: true
     folder: binary

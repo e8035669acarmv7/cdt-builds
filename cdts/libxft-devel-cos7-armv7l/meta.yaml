@@ -1,10 +1,10 @@
 package:
-  name: libxft-cos7-armv7l
+  name: libxft-devel-cos7-armv7l
   version: 2.3.2
 
 source:
-  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXft-2.3.2-2.el7.armv7hl.rpm
-    sha256: b7997fe701a177e36ff815c0d9f053a5a6db2b6600462fff6a4bb4d272197354
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXft-devel-2.3.2-2.el7.armv7hl.rpm
+    sha256: 6a11a66675ab7260795e548bc0ad6c0536160c92cd3234feb3cc25989e8db6b9
     no_hoist: true
     folder: binary
   # - url: http://vault.centos.org/7.7.1908/os/Source/SPackages/libXft-2.3.2-2.el7.src.rpm
@@ -21,12 +21,12 @@ build:
 
 requirements:
   build:
-    - fontconfig-cos7-armv7l >=2.2 *_{{ cdt_build_number|int + 1000 }}
+    - libxft-cos7-armv7l ==2.3.2 *_{{ cdt_build_number|int + 1000 }}
   host:
-    - fontconfig-cos7-armv7l >=2.2 *_{{ cdt_build_number|int + 1000 }}
+    - libxft-cos7-armv7l ==2.3.2 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
-    - fontconfig-cos7-armv7l >=2.2 *_{{ cdt_build_number|int + 1000 }}
+    - libxft-cos7-armv7l ==2.3.2 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:
@@ -37,10 +37,10 @@ about:
   home: http://www.x.org
   license: MIT
   license_family: MIT
-  license_file: {{ SRC_DIR }}/binary/usr/share/doc/libXft-2.3.2/COPYING
-  summary: "(CDT) X.Org X11 libXft runtime library"
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
+  summary: "(CDT) X.Org X11 libXft development package"
   description: |
-        X.Org X11 libXft runtime library
+        X.Org X11 libXft development package
 
 extra:
   recipe-maintainers:

@@ -3,7 +3,7 @@ package:
   version: 0.7.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libxkbcommon-devel-0.7.1-3.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libxkbcommon-devel-0.7.1-3.el7.armv7hl.rpm
     sha256: 1c64ea468deb323560dc868e582f844bee400a58d58794f7d4356d3b99d2fe05
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - libxkbcommon-cos7-armv7l ==0.7.1 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - libxkbcommon-cos7-armv7l ==0.7.1 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - libxkbcommon-cos7-armv7l ==0.7.1 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

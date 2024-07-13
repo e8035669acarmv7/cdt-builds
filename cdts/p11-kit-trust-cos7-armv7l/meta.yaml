@@ -3,7 +3,7 @@ package:
   version: 0.23.5
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/p11-kit-trust-0.23.5-3.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/p11-kit-trust-0.23.5-3.el7.armv7hl.rpm
     sha256: 69a605e9c69e6d50cca3f0660e848477fc599e7861b999a35fe4b891dbbf0bdc
     no_hoist: true
     folder: binary
@@ -20,9 +20,13 @@ build:
     - '*'
 
 requirements:
+  build:
+    - p11-kit-cos7-armv7l ==0.23.5 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - p11-kit-cos7-armv7l ==0.23.5 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - p11-kit-cos7-armv7l ==0.23.5 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
 test:

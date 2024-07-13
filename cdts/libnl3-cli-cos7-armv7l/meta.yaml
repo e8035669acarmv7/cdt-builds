@@ -3,7 +3,7 @@ package:
   version: 3.2.28
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libnl3-cli-3.2.28-4.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libnl3-cli-3.2.28-4.el7.armv7hl.rpm
     sha256: 3aa4e20f0250f5b80021a7710ebad2fe40dd269375b6e54c0663ec2af029cee5
     no_hoist: true
     folder: binary

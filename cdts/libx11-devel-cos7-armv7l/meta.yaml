@@ -3,7 +3,7 @@ package:
   version: 1.6.7
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libX11-devel-1.6.7-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libX11-devel-1.6.7-2.el7.armv7hl.rpm
     sha256: 1759bdcaca531c3bae3ee74a46d303a35caac229e7c87a8988d37874f195d383
     no_hoist: true
     folder: binary
@@ -37,7 +37,7 @@ about:
   home: http://www.x.org
   license: MIT
   license_family: MIT
-  license_file: x11-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Development files for libX11"
   description: |
         X.Org X11 libX11 development package

@@ -3,7 +3,7 @@ package:
   version: 0.4.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/xcb-util-image-0.4.0-2.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/xcb-util-image-0.4.0-2.el7.armv7hl.rpm
     sha256: d8a16091996e848ee66440211636f24389cb420c77499b0054b727aae6602a5c
     no_hoist: true
     folder: binary

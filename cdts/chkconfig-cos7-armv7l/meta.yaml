@@ -3,7 +3,7 @@ package:
   version: 1.7.6
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/chkconfig-1.7.6-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/chkconfig-1.7.6-1.el7.armv7hl.rpm
     sha256: 7f1ba552f8269bddd2ba5b0bfa74a8a5d83377d7546a095f6fac771dab5151ef
     no_hoist: true
     folder: binary

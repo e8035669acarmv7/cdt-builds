@@ -3,7 +3,7 @@ package:
   version: 2.14.19
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/ORBit2-2.14.19-13.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/ORBit2-2.14.19-13.el7.armv7hl.rpm
     sha256: 511ccab2b6de48780f11897b9b9f3e7f771532e2072388059790cd3fa04a9886
     no_hoist: true
     folder: binary

@@ -3,7 +3,7 @@ package:
   version: 1.0.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libglvnd-core-devel-1.0.1-0.8.git5baa1e5.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libglvnd-core-devel-1.0.1-0.8.git5baa1e5.el7.armv7hl.rpm
     sha256: 7106387764ec82641b65bb1321dc79119f4b42e908344496e6b5e86ea6bcd8ea
     no_hoist: true
     folder: binary

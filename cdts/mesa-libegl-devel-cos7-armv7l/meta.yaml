@@ -3,7 +3,7 @@ package:
   version: 18.3.4
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/mesa-libEGL-devel-18.3.4-10.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/mesa-libEGL-devel-18.3.4-10.el7.armv7hl.rpm
     sha256: 5657302a9e7fc2d239fbaaa26fb6a29dddd57535cb14a98c803dfc8fb6cfc6b1
     no_hoist: true
     folder: binary
@@ -21,11 +21,14 @@ build:
 
 requirements:
   build:
+    - mesa-khr-devel-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
     - mesa-libegl-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
   host:
+    - mesa-khr-devel-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
     - mesa-libegl-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
+    - mesa-khr-devel-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
     - mesa-libegl-cos7-armv7l ==18.3.4 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
@@ -37,7 +40,7 @@ about:
   home: http://www.mesa3d.org
   license: MIT
   license_family: MIT
-  license_file: mesa-license
+  license_file: {{ SRC_DIR }}/binary/LICENSE_NOT_FOUND
   summary: "(CDT) Mesa libEGL development package"
   description: |
         Mesa libEGL development package

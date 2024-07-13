@@ -3,7 +3,7 @@ package:
   version: 2.56.1
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/glib2-2.56.1-7.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/glib2-2.56.1-7.el7.armv7hl.rpm
     sha256: 082e7c54ac4ae15f8dd7732ae51fe3427c5d3cc6bdadfa62e81d6633d3c19a75
     no_hoist: true
     folder: binary

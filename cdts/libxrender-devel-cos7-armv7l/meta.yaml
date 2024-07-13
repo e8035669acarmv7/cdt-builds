@@ -3,7 +3,7 @@ package:
   version: 0.9.10
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/libXrender-devel-0.9.10-1.el7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/libXrender-devel-0.9.10-1.el7.armv7hl.rpm
     sha256: c645c635aee9255690ce00d2516094279f497f518d7767dda8069871a4493ffc
     no_hoist: true
     folder: binary

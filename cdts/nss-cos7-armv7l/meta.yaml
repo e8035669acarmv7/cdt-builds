@@ -3,7 +3,7 @@ package:
   version: 3.44.0
 
 source:
-  - url: http://mirror.centos.org/altarch/7/os/armhfp/Packages/nss-3.44.0-7.el7_7.armv7hl.rpm
+  - url: http://vault.centos.org/altarch/7/os/armhfp/Packages/nss-3.44.0-7.el7_7.armv7hl.rpm
     sha256: de9ec7cf2153b5cb829880a8e2c263e44345f57778840d684197553249c625d1
     no_hoist: true
     folder: binary
@@ -22,13 +22,16 @@ build:
 requirements:
   build:
     - nspr-cos7-armv7l >=4.21.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
     - nss-util-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
   host:
     - nspr-cos7-armv7l >=4.21.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
     - nss-util-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
   run:
     - nspr-cos7-armv7l >=4.21.0 *_{{ cdt_build_number|int + 1000 }}
+    - nss-softokn-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
     - nss-util-cos7-armv7l >=3.44.0 *_{{ cdt_build_number|int + 1000 }}
     - sysroot_linux-armv7l 2.17.*
 
